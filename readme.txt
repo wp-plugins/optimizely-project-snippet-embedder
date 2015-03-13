@@ -36,6 +36,11 @@ Yes it is - absolutely free! (But unfortunately Optimizely itself might cost you
 
 == Changelog ==
 
+= 1.1.3 =
+* Added nagging admin_notice to make sure you remember to at the Optimizely Project Snippet ID
+* Minor bugfixes
+* Updated donate-links
+
 = 1.1.2 =
 * Heavy refactoring of code.
 * Minor bugfixes
@@ -56,6 +61,9 @@ Yes it is - absolutely free! (But unfortunately Optimizely itself might cost you
 * A Working Release. If you're still running 0.x.x you should most definitely upgrade!
 
 == Upgrade Notice ==
+
+= 1.1.3 =
+Added admin notice the make sure users remember to add their Optimizely Project Snippet ID.
 
 = 1.1.2 =
 Refactoring of code and performance upgrades.

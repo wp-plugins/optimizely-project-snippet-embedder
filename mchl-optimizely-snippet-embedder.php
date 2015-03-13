@@ -4,18 +4,9 @@
 	Plugin URI: http://michaelkjeldsen.com/optimizely-embedder/
 	Description: Easily add the Optimizely script on your website.
 	Author: Michael Kjeldsen
-	Version: 1.1.2
+	Version: 1.1.3
 	Author URI: http://michaelkjeldsen.com/
 	Text Domain: mchl-optimizely-snippet-embedder
-
-	RELEASE NOTES
-	---------------------------------------
-	1.1.2 - Refactored code
-	1.1.1 - Added "Create account" link
-	1.1.0 - I18n Ready
-	1.0.1 - Now with 100 % more input fields (for, like, you know,
-			this plugin to actually make sense)
-	1.0.0 - A Working Release
 
 	FEATURE WISH LIST
 	---------------------------------------
@@ -24,24 +15,17 @@
 	* API-to-Dashboard to showcase running test(s)
 */
 
-	define( 'MCHL_OSE_VERSION', '1.1.2' );
+	define( 'MCHL_OSE_VERSION', '1.1.3' );
 
 	if ( !is_admin() )
 		{
-			wp_enqueue_script( 'mchl_optimizely_snippet_embedder', '//cdn.optimizely.com/js/' . get_option('mchl_optimizely_data') . '.js', '', MCHL_OSE_VERSION, false );
-			add_action( 'wp_enqueue_scripts', 'mchl_optimizely_snippet_embedder' );
-
-			// Get plugin version
-			function mchl_optimizely_plugin_get_version()
+			if ( get_option('mchl_optimizely_data') )
 				{
-					if ( ! function_exists( 'get_plugins' ) )
+					add_action( 'wp_enqueue_scripts', 'mchl_optimizely_snippet_embedder_script' );
+					function mchl_optimizely_snippet_embedder_script()
 						{
-							require_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+							wp_enqueue_script( 'mchl_optimizely_snippet_embedder', '//cdn.optimizely.com/js/' . get_option('mchl_optimizely_data') . '.js', array(), MCHL_OSE_VERSION, false );
 						}
-
-					$plugin_folder = get_plugins( '/' . plugin_basename( dirname( __FILE__ ) ) );
-					$plugin_file = basename( ( __FILE__ ) );
-					echo $plugin_folder[$plugin_file]['Version'];
 				}
 		}
 
@@ -77,6 +61,20 @@
 					return '<span class="mchl_optimizely_project_id">' . $mchl_optimizely_project_id . '</span>';
 				}
 
+			// Add nagging error-message in admin, until the user add their Project Snipper ID in the plugin settings
+			add_action( 'admin_notices', 'no_project_snippet_admin_notice' );
+			function no_project_snippet_admin_notice()
+				{
+					if ( !get_option('mchl_optimizely_data') )
+						{
+							?>
+							<div class="update-nag">
+								<p><?php _e( 'Please provide your Optimizely Project Snippet ID in the <a href="tools.php?page=mchl-optimizely-snippet-embedder">plugin settings</a>.', 'mchl-optimizely-snippet-embedder' ); ?></p>
+							</div>
+							<?php
+						}
+				}
+
 			// SaveAdmin
 			// @todo: Refactor
 			function mchl_optimizely_saveadmin()
@@ -90,7 +88,7 @@
 			add_filter("plugin_action_links_$plugin", 'optimizely_snippet_embedder_donate_link' );
 			function optimizely_snippet_embedder_donate_link($links)
 				{
-					$donate_link = '<a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=69NSYMHNFPEFJ&lc=DK&item_name=Optimizely%20Snippet%20Embedder%20donation&item_number=optsnipemb%2ddonation&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHostedGuest">' . __( 'Donate', 'mchl-optimizely-snippet-embedder' ) . '</a>';
+					$donate_link = '<a href="http://michaelkjeldsen.com/donate-opt/">' . __( 'Donate', 'mchl-optimizely-snippet-embedder' ) . '</a>';
 					array_unshift($links, $donate_link);
 					return $links;
 				}
@@ -148,7 +146,7 @@
 							<p>
 								<em>Optimizely Snippet Embedder&trade;</em> ' . __( 'is a forever-free plugin by', 'mchl-optimizely-snippet-embedder' ) .' <a href="http://michaelkjeldsen.com">Michael Kjeldsen</a>.
 								' . __( 'Feel free to share with everyone you know.', 'mchl-optimizely-snippet-embedder' ) .'
-								' . __( 'Do you like this plugin, please', 'mchl-optimizely-snippet-embedder' ) .' <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=69NSYMHNFPEFJ&lc=DK&item_name=Optimizely%20Snippet%20Embedder%20donation&item_number=optsnipemb%2ddonation&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donate_SM%2egif%3aNonHostedGuest" target="_blank">' . __( 'donate a beer to the developer', 'mchl-optimizely-snippet-embedder' ) . '</a>.
+								' . __( 'Do you like this plugin, please', 'mchl-optimizely-snippet-embedder' ) .' <a href="http://michaelkjeldsen.com/donate-opt/" target="_blank">' . __( 'donate a beer to the developer', 'mchl-optimizely-snippet-embedder' ) . '</a>.
 							</p>
 						</div>';
 
