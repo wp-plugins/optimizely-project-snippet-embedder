@@ -1,10 +1,10 @@
 === Optimizely Snippet Embedder ===
 Contributors: michaelkjeldsen
 Donate link: http://michaelkjeldsen.com/donate-opt/
-Tags: splittest,optimizely
+Tags: splittest,optimizely,a b test,mvt test
 Requires at least: 3.0.1
 Tested up to: 4.1.1
-Stable tag: trunk
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,6 +36,9 @@ Yes it is - absolutely free! (But unfortunately Optimizely itself might cost you
 
 == Changelog ==
 
+= 1.1.4 =
+* Removed unnescessary files.
+
 = 1.1.3 =
 * Added nagging admin_notice to make sure you remember to at the Optimizely Project Snippet ID
 * Minor bugfixes
@@ -61,6 +64,9 @@ Yes it is - absolutely free! (But unfortunately Optimizely itself might cost you
 * A Working Release. If you're still running 0.x.x you should most definitely upgrade!
 
 == Upgrade Notice ==
+
+= 1.1.4 =
+This upgrade is purely a clean-up of unused files. No update required (although you are perfectly free to do so!)
 
 = 1.1.3 =
 Added admin notice the make sure users remember to add their Optimizely Project Snippet ID.
