@@ -4,7 +4,7 @@
 	Plugin URI: http://michaelkjeldsen.com/optimizely-embedder/
 	Description: Easily add the Optimizely script on your website.
 	Author: Michael Kjeldsen
-	Version: 1.1.3
+	Version: 1.1.4
 	Author URI: http://michaelkjeldsen.com/
 	Text Domain: mchl-optimizely-snippet-embedder
 
