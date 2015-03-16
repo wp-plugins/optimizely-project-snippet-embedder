@@ -15,7 +15,7 @@
 	* API-to-Dashboard to showcase running test(s)
 */
 
-	define( 'MCHL_OSE_VERSION', '1.1.3' );
+	define( 'MCHL_OSE_VERSION', '1.1.4' );
 
 	if ( !is_admin() )
 		{
