@@ -29,6 +29,10 @@ Yes, it's as easy as that.
 
 Yes it is - absolutely free! (But unfortunately Optimizely itself might cost you a few bucks).
 
+= Who did that spledid looking icon? =
+
+The plugin icon is from the [Kameleon Free Pack](http://www.kameleon.pics/) by [Webalys](http://www.webalys.com/).
+
 == Screenshots ==
 
 1. Input screen with an example of an Optimizely Project Snippet ID inserted. Yup, that's just about it.
