@@ -47,7 +47,7 @@ The plugin icon is from the [Kameleon Free Pack](http://www.kameleon.pics/free-i
 * Removed unnescessary files.
 
 = 1.1.3 =
-* Added nagging admin_notice to make sure you remember to at the Optimizely Project Snippet ID
+* Added nagging admin_notice to make sure you remember to add the Optimizely Project Snippet ID
 * Minor bugfixes
 * Updated donate-links
 
