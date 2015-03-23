@@ -40,7 +40,7 @@ The plugin icon is from the [Kameleon Free Pack](http://www.kameleon.pics/free-i
 
 == Changelog ==
 
-=1.1.6=
+= 1.1.6 =
 * Client-side input validation on settings page
 
 = 1.1.4 =
