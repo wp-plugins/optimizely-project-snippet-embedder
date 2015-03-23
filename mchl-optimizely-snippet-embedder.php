@@ -4,7 +4,7 @@
 	Plugin URI: http://michaelkjeldsen.com/optimizely-embedder/
 	Description: Easily add the Optimizely script on your website.
 	Author: Michael Kjeldsen
-	Version: 1.1.4
+	Version: 1.1.6
 	Author URI: http://michaelkjeldsen.com/
 	Text Domain: mchl-optimizely-snippet-embedder
 
@@ -15,7 +15,7 @@
 	* API-to-Dashboard to showcase running test(s)
 */
 
-	define( 'MCHL_OSE_VERSION', '1.1.3' );
+	define( 'MCHL_OSE_VERSION', '1.1.6' );
 
 	if ( !is_admin() )
 		{
@@ -128,7 +128,7 @@
 								<tbody>
 									<tr valign="top">
 										<th scope="row"><label for="mchl_optimizely_data">Project Snippet ID:</label></th>
-										<td><input name="mchl_optimizely_data" class="small-text" style="width:200px;" type="text" id="mchl_optimizely_data" value="' . get_option('mchl_optimizely_data') . '" placeholder="XXXXXXXXXX" required autofocus></td>
+										<td><input name="mchl_optimizely_data" class="large-text" style="width:200px;" type="text" pattern="[0-9]*" id="mchl_optimizely_data" value="' . get_option('mchl_optimizely_data') . '" placeholder="XXXXXXXXXX" required autofocus></td>
 									</tr>
 									<tr>
 										<th>' . __( "Don't have an account?", 'mchl-optimizely-snippet-embedder' ) . '</th>

@@ -1,10 +1,10 @@
 === Optimizely Snippet Embedder ===
 Contributors: michaelkjeldsen
 Donate link: http://michaelkjeldsen.com/donate-opt/
-Tags: splittest,optimizely,a b test,mvt test
+Tags: splittest, optimizely, a b test,mvt test,a/b testing,split testing,website optimization
 Requires at least: 3.0.1
 Tested up to: 4.1.1
-Stable tag: 1.1.4
+Stable tag: 1.1.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,12 +29,23 @@ Yes, it's as easy as that.
 
 Yes it is - absolutely free! (But unfortunately Optimizely itself might cost you a few bucks).
 
+= Who did that spledid looking icon? =
+
+The plugin icon is from the [Kameleon Free Pack](http://www.kameleon.pics/free-icons-pack.html) by [Webalys](http://www.webalys.com/).
+
 == Screenshots ==
 
 1. Input screen with an example of an Optimizely Project Snippet ID inserted. Yup, that's just about it.
 2. Don't have an account yet? Click the "Create a free account" link and sign up.
 
 == Changelog ==
+
+= 1.1.6 =
+* Client-side input validation on settings page.
+* Minor bug fixes.
+
+= 1.1.5 =
+* The update that never was...
 
 = 1.1.4 =
 * Removed unnescessary files.
@@ -64,6 +75,12 @@ Yes it is - absolutely free! (But unfortunately Optimizely itself might cost you
 * A Working Release. If you're still running 0.x.x you should most definitely upgrade!
 
 == Upgrade Notice ==
+
+= 1.1.6 =
+Minor bug fixes
+
+= 1.1.5 =
+The missing update *poof*
 
 = 1.1.4 =
 This upgrade is purely a clean-up of unused files. No update required (although you are perfectly free to do so!)
