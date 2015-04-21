@@ -4,7 +4,7 @@
 	Plugin URI: http://michaelkjeldsen.com/optimizely-embedder/
 	Description: Easily add the Optimizely script on your website.
 	Author: Michael Kjeldsen
-	Version: 1.1.6
+	Version: trunk
 	Author URI: http://michaelkjeldsen.com/
 	Text Domain: mchl-optimizely-snippet-embedder
 
@@ -15,7 +15,7 @@
 	* API-to-Dashboard to showcase running test(s)
 */
 
-	define( 'MCHL_OSE_VERSION', '1.1.6' );
+	define( 'MCHL_OSE_VERSION', '2.0.0' );
 
 	if ( !is_admin() )
 		{
@@ -28,6 +28,30 @@
 						}
 				}
 		}
+
+	/*
+		<script>
+			(function() { 
+				var projectId = ' . get_option('mchl_optimizely_data') . ';
+				var protocol = ('https:' == document.location.protocol ? 
+				'https://' : 'http://');
+				var scriptTag = document.createElement('script');
+				scriptTag.type = 'text/javascript';
+				scriptTag.async = true;
+				scriptTag.src = protocol + 'cdn.optimizely.com/js/' + 
+				projectId + '.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(scriptTag, s);
+			})();
+			function optimizelyTimeout() {
+				window.optimizely = window.optimizely|| [];
+				if (!window.optimizely.data) {
+					window.optimizely.push("timeout");
+				}
+			}
+			setTimeout(optimizelyTimeout, 1000);
+		</script>
+	*/
 
 	if ( is_admin() )
 		{
@@ -132,7 +156,7 @@
 									</tr>
 									<tr>
 										<th>' . __( "Don't have an account?", 'mchl-optimizely-snippet-embedder' ) . '</th>
-										<td><em><a href="https://www.optimizely.com/?utm_source=vwo+snippet-embedder+wp+plugin&amp;utm_medium=link&amp;&utm_campaign=create+free+account" target="_blank">' . __( "Create a free account here", 'mchl-optimizely-snippet-embedder' ) . ' &raquo;</a></em></td>
+										<td><em><a href="https://www.optimizely.com/?utm_source=optimizely+snippet+embedder+wp+plugin&amp;utm_medium=link&amp;&utm_campaign=create+free+account" target="_blank">' . __( "Create a free account here", 'mchl-optimizely-snippet-embedder' ) . ' &raquo;</a></em></td>
 									</tr>
 								</tbody>
 								</table>
