@@ -36,7 +36,7 @@
 			function mchl_optimizely_install()
 				{
 					add_option("mchl_optimizely_data", '', '', 'yes');
-				} 
+				}
 
 			// Runs on plugin deactivation
 			register_deactivation_hook( __FILE__, 'mchl_optimizely_remove' );
